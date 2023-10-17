@@ -5,9 +5,8 @@ from item.models import Item
 class Conversation(models.Model):
     item = models.ForeignKey(Item, related_name='conversation', on_delete=models.CASCADE)
     members =  models.ManyToManyField(User, related_name='conversations')
-    creeated_at =  models.DateTimeField(auto_now_add=True)
-    modifieid_at = models.DateTimeField(auto_now=True)
-
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
 
 class Meta:
     ordering = ('-modified_at',)
