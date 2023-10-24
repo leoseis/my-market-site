@@ -78,6 +78,4 @@ def edit (request, pk):
 def delete (request, pk):
    item = get_object_or_404(item, pk=pk, created_by= request.user)
    item.delete()
-   return redirect('dashboard: index')
-
-
+   return redirect('dashboard: index')          #taken  to the dashboard after deleting
